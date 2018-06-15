@@ -1,23 +1,31 @@
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+    outline: none;
+}
+
 .note-form {
-  padding-left: 18px;
-  margin: 30px;
-  margin-top: 0px;
+  margin: 0 auto;
+  width: 200px;
 }
 
 .note-header {
   font-size: 32px;
+  text-align: center;
 }
 
 .note-subheader {
   font-size: 18px;
   margin-bottom: 10px;
   color: rgba(0, 0, 0, 0.60);
+  text-align: center;
 }
 
 .note-input {
-  border: none;
   background-color: rgba(0, 0, 0, 0.08);
-  height: 150px;
+  border: none;
+  height: 175px;
   width: 200px;
   resize: none;
   padding: 10px;
@@ -27,7 +35,7 @@
   background-color: rgba(0, 0, 0, 0.08);
   border: none;
   color: rgba(0, 0, 0, 0.45);
-  padding: 10px 74.5px;
+  padding: 10px 74.4px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
@@ -36,6 +44,8 @@
 
 .note-submit:hover {
   background-color: rgba(0, 0, 0, 0.12);
+  cursor: pointer;
+  color: rgb(50, 115, 221);
 }
 
 .page-space-filler {
