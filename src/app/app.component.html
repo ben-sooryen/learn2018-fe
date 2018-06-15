@@ -17,6 +17,9 @@
         <a class="navbar-item" [routerLink]="['/members']" *ngIf="authService.isAuthenticated">
           Members
         </a>
+        <a class="navbar-item" [routerLink]="['/notes']" *ngIf="authService.isAuthenticated">
+          Notes
+        </a>
         <a class="navbar-item" *ngIf="authService.isAuthenticated" (click)="authService.logout()">
           Logout
         </a>
