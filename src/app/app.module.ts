@@ -23,6 +23,13 @@ const routes = [
       CanActivateViaAuthGuard
     ]
   },
+  {
+    path: 'notes',
+    component: NotesComponent,
+    canActivate: [
+      CanActivateViaAuthGuard
+    ]
+  },
   { path: '', component: HomeComponent },
   { path: '**', redirectTo: '' }
 ];
