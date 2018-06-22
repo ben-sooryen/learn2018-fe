@@ -8,11 +8,12 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { MembersComponent } from './members/members.component';
+import { NotesComponent } from './notes/notes.component';
+import { SignupComponent } from './signup/signup.component';
 
 import { AuthService } from './auth.service';
 import { AuthInterceptorService } from './auth-interceptor.service';
 import { CanActivateViaAuthGuard } from './can-activate-via-auth.guard';
-import { NotesComponent } from './notes/notes.component';
 import { NotesService } from './notes.service';
 
 const routes = [
@@ -31,6 +32,7 @@ const routes = [
       CanActivateViaAuthGuard
     ]
   },
+  { path: 'signup', component: SignupComponent },
   { path: '', component: HomeComponent },
   { path: '**', redirectTo: '' }
 ];
@@ -41,7 +43,8 @@ const routes = [
     HomeComponent,
     LoginComponent,
     MembersComponent,
-    NotesComponent
+    NotesComponent,
+    SignupComponent
   ],
   imports: [
     BrowserModule,

@@ -1,9 +1,6 @@
 import { Injectable } from '@angular/core';
-import { RequestOptions, Response } from '@angular/http';
-
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Router } from '@angular/router';
-import {Observable} from 'rxjs';
 
 @Injectable()
 export class AuthService {
@@ -41,8 +38,26 @@ export class AuthService {
         localStorage.setItem(this.TOKEN_KEY, res.token);
 
         this.router.navigateByUrl('/members');
-      }
-    );
+      });
+  }
+
+  signup(username: string, email: string, password: string) {
+    const headers = {
+      headers: new HttpHeaders({ 'Content-Type': 'application/json', 'Cache-Control': 'no-cache' })
+    };
+
+    const data = {
+      username: username,
+      password: password,
+      email: email
+    };
+
+    this.http.post(this.API_URL + '/users', data, headers).subscribe(
+      (res: any) => {
+        localStorage.setItem(this.TOKEN_KEY, res.token);
+
+        this.router.navigateByUrl('/members');
+      });
   }
 
   getAccount() {
