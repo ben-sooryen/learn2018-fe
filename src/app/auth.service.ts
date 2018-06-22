@@ -1,9 +1,6 @@
 import { Injectable } from '@angular/core';
-import { RequestOptions, Response } from '@angular/http';
-
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Router } from '@angular/router';
-import {Observable} from 'rxjs';
 
 @Injectable()
 export class AuthService {
@@ -41,7 +38,7 @@ export class AuthService {
         localStorage.setItem(this.TOKEN_KEY, res.token);
 
         this.router.navigateByUrl('/members');
-      }
+      });
   }
 
   signup(username: string, email: string, password: string) {
@@ -60,7 +57,7 @@ export class AuthService {
         localStorage.setItem(this.TOKEN_KEY, res.token);
 
         this.router.navigateByUrl('/members');
-      }
+      });
   }
 
 

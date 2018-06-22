@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder, Validators, FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { AuthService } from '../auth.service';
 
 @Component({
@@ -21,11 +21,12 @@ export class SignupComponent implements OnInit {
 
   ngOnInit() {
   }
-   signup() {
-   	const val = this.form.value;
 
-   	if (val.username && val.email && val.password) {
-       this.authService.signup(val.username, val.email, val.password);
-	}
-}  
+  signup() {
+    const val = this.form.value;
+
+    if (val.username && val.email && val.password) {
+      this.authService.signup(val.username, val.email, val.password);
+    }
+  }
 }
