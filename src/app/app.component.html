@@ -14,8 +14,14 @@
         <a class="navbar-item" [routerLink]="['/login']" *ngIf="!authService.isAuthenticated">
           Login
         </a>
+        <a class="navbar-item" [routerLink]="['/signup']" *ngIf="!authService.isAuthenticated">
+          Sign up
+        </a>
         <a class="navbar-item" [routerLink]="['/members']" *ngIf="authService.isAuthenticated">
           Members
+        </a>
+        <a class="navbar-item" [routerLink]="['/notes']" *ngIf="authService.isAuthenticated">
+          Notes
         </a>
         <a class="navbar-item" *ngIf="authService.isAuthenticated" (click)="authService.logout()">
           Logout
