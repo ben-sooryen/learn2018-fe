@@ -1,11 +1,11 @@
-<form class="note-form">
+<form class="note-form" [formGroup]="form" (ngSubmit)="postNote()">
   <h1 class="note-header">
     Create Note
   </h1>
   <h4 class="note-subheader">
     Note text:
   </h4>
-  <textarea class="note-input" name="note-text" placeholder="Type a new note!"></textarea>
+  <textarea class="note-input" name="note-text" placeholder="Type a new note!" formControlName="text"></textarea>
   <br />
   <input type="submit" class="note-submit" name="submit-button" value="Submit">
 </form>
