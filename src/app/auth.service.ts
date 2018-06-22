@@ -42,8 +42,27 @@ export class AuthService {
 
         this.router.navigateByUrl('/members');
       }
-    );
   }
+
+  signup(username: string, email: string, password: string) {
+    const headers = {
+      headers: new HttpHeaders({ 'Content-Type': 'application/json', 'Cache-Control': 'no-cache' })
+    };
+
+    const data = {
+      username: username,
+      password: password,
+      email: email
+    };
+
+    this.http.post(this.API_URL + '/users', data, headers).subscribe(
+      (res: any) => {
+        localStorage.setItem(this.TOKEN_KEY, res.token);
+
+        this.router.navigateByUrl('/members');
+      }
+  }
+
 
   getAccount() {
     const headers = {

@@ -13,6 +13,7 @@ import { AuthService } from './auth.service';
 import { AuthInterceptorService } from './auth-interceptor.service';
 import { CanActivateViaAuthGuard } from './can-activate-via-auth.guard';
 import { NotesComponent } from './notes/notes.component';
+import { SignupComponent } from './signup/signup.component';
 
 const routes = [
   { path: 'login', component: LoginComponent },
@@ -30,6 +31,7 @@ const routes = [
       CanActivateViaAuthGuard
     ]
   },
+  { path: 'signup', component: SignupComponent },
   { path: '', component: HomeComponent },
   { path: '**', redirectTo: '' }
 ];
@@ -40,7 +42,8 @@ const routes = [
     HomeComponent,
     LoginComponent,
     MembersComponent,
-    NotesComponent
+    NotesComponent,
+    SignupComponent
   ],
   imports: [
     BrowserModule,
