@@ -60,7 +60,6 @@ export class AuthService {
       });
   }
 
-
   getAccount() {
     const headers = {
       headers: new HttpHeaders({
