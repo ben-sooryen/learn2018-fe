@@ -13,6 +13,7 @@ import { AuthService } from './auth.service';
 import { AuthInterceptorService } from './auth-interceptor.service';
 import { CanActivateViaAuthGuard } from './can-activate-via-auth.guard';
 import { NotesComponent } from './notes/notes.component';
+import { NotesService } from './notes.service';
 
 const routes = [
   { path: 'login', component: LoginComponent },
@@ -59,7 +60,8 @@ const routes = [
       useClass: AuthInterceptorService,
       multi: true
     },
-    CanActivateViaAuthGuard
+    CanActivateViaAuthGuard,
+    NotesService
   ],
   bootstrap: [AppComponent]
 })
